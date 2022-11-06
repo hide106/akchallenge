@@ -34,7 +34,7 @@ class RegisterContoroller extends Controller
         $validator = Validator::make($request->all(), $rules,  $messages);
 
         if ($validator->fails()) {
-            return redirect('akchg/register')->withErrors($validator)->withInput();
+            return redirect()->route('register')->withErrors($validator)->withInput();
         }
 
         $param = [
@@ -45,6 +45,6 @@ class RegisterContoroller extends Controller
 
         DB::table('akuser')->insert($param);
 
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }

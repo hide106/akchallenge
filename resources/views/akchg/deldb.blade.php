@@ -2,7 +2,7 @@
 
 @section('title', 'Usersデータ削除画面')
 @section('content')
-    <form action="deldb" method="post">
+    <form action="{{ route('deldb') }}" method="post">
         @csrf
         <div class="ly_lnk">
             <input type="submit" name="send" class = "btn" value="DB削除">

@@ -23,7 +23,7 @@
     <div id="questionArea">
         <h1>スタート</h1>
     </div>
-<form action="/mathprob?grade={{$grade}}&level={{$level}}&unit={{$unit}}&ans_n={{$ans}}" method="post">
+<form action="{{ route('mathprob') }}?grade={{$grade}}&level={{$level}}&unit={{$unit}}&ans_n={{$ans}}" method="post">
     @csrf 
     <div  class = "answer_area">
 @php

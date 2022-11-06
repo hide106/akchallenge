@@ -13,22 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-#Route::get('hello', 'App\Http\Controllers\HelloController@index')->middleware('auth');
-#Route::post('hello', 'App\Http\Controllers\HelloController@post');
+#Route::get('hello', 'App\Http\Controllers\HelloController@index')->middleware('auth')->name('');
+#Route::post('hello', 'App\Http\Controllers\HelloController@post')->name('');
 
-Route::get('login', 'App\Http\Controllers\LoginContoroller@showLoginForm');
-Route::post('login', 'App\Http\Controllers\LoginContoroller@login');
-Route::get('register', 'App\Http\Controllers\RegisterContoroller@showRegisterForm');
-Route::post('register', 'App\Http\Controllers\RegisterContoroller@register');
-Route::get('deldb', 'App\Http\Controllers\DelDBController@showDelDBForm');
-Route::post('deldb', 'App\Http\Controllers\DelDBController@delDB');
-Route::get('logout', 'App\Http\Controllers\LogoutController@logout');
+Route::get('public/login', 'App\Http\Controllers\LoginContoroller@showLoginForm')->name('login');
+Route::post('public/login', 'App\Http\Controllers\LoginContoroller@login')->name('login');
+Route::get('public/register', 'App\Http\Controllers\RegisterContoroller@showRegisterForm')->name('register');
+Route::post('public/register', 'App\Http\Controllers\RegisterContoroller@register')->name('register');
+Route::get('public/deldb', 'App\Http\Controllers\DelDBController@showDelDBForm')->name('deldb');
+Route::post('public/deldb', 'App\Http\Controllers\DelDBController@delDB')->name('deldb');
+Route::get('public/logout', 'App\Http\Controllers\LogoutController@logout')->name('logout');
 
-Route::get('subject', 'App\Http\Controllers\SubjectController@showSubjectPage');
-Route::get('mathgrade', 'App\Http\Controllers\SubjectController@showMathGradePage');
-Route::get('math1st', 'App\Http\Controllers\SubjectController@showMath1stGradePage');
-Route::get('math2nd', 'App\Http\Controllers\SubjectController@showMath2ndGradePage');
-Route::get('math3rd', 'App\Http\Controllers\SubjectController@showMath3rdGradePage');
-Route::get('mathprob', 'App\Http\Controllers\QuestionController@showProblem');
-Route::post('mathprob', 'App\Http\Controllers\QuestionController@gradeProblem');
+Route::get('public/subject', 'App\Http\Controllers\SubjectController@showSubjectPage')->name('subject');
+Route::get('public/mathgrade', 'App\Http\Controllers\SubjectController@showMathGradePage')->name('mathgrade');
+Route::get('public/math1st', 'App\Http\Controllers\SubjectController@showMath1stGradePage')->name('math1st');
+Route::get('public/math2nd', 'App\Http\Controllers\SubjectController@showMath2ndGradePage')->name('math2nd');
+Route::get('public/math3rd', 'App\Http\Controllers\SubjectController@showMath3rdGradePage')->name('math3rd');
+Route::get('public/mathprob', 'App\Http\Controllers\QuestionController@showProblem')->name('mathprob');
+Route::post('public/mathprob', 'App\Http\Controllers\QuestionController@gradeProblem')->name('mathprob');
 

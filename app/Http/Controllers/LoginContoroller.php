@@ -26,7 +26,7 @@ class LoginContoroller extends Controller
             $id = $db_item->id;
             $request->session()->put('id', $id);
 
-            return redirect('/subject');
+            return redirect()->route('subject');
         } else {
             $msg = '※メールアドレスまたはパスワードが違います。';
 

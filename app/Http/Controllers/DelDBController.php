@@ -16,6 +16,6 @@ class DelDBController extends Controller
     {
         DB::table('akuser')->delete();
 
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }

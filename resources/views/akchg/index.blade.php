@@ -2,7 +2,7 @@
 
 @section('title', 'ログイン')
 @section('content')
-    <form action="/login" method="post">
+    <form action="{{ route('login') }}" method="post">
         <table>
         @csrf
             <tr><th>メールアドレス　</th><td><input type="text" name="mail"></td></tr>
@@ -17,7 +17,7 @@
         </div>
     </form>
     <div class="ly_lnk">
-        <a href="/register" class="lnk">登録はこちらから</a>
+        <a href="{{ route('register') }}" class="lnk">登録はこちらから</a>
     </div>
 @endsection
 @section('footer')

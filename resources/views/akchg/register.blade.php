@@ -2,7 +2,7 @@
 
 @section('title', '登録画面')
 @section('content')
-    <form action="register" method="post">
+    <form action="{{ route('register') }}" method="post">
         <table>
         @csrf
             <tr><th>ユーザー名　</th><td><input type="text" name="name" value="{{old('name')}}"></td></tr>
