@@ -13,6 +13,9 @@
             @if ($errors->has('mail'))
             <tr><th></th><td>{{$errors->first('mail')}}</td></tr>
             @endif
+            @isset($msg)
+            <tr><th></th><td>{{$msg}}</td></tr>
+            @endisset
             <tr><th>パスワード　</th><td><input type="password" name="password"></td></tr>
             <tr><th>パスワード（確認用）</th><td><input type="password" name="password_confirmation"></td></tr>
             @if ($errors->has('password'))

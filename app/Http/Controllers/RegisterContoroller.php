@@ -18,6 +18,7 @@ class RegisterContoroller extends Controller
 
     public function register(Request $request)
     {
+        /* 入力チェック */
         $rules = [
             'name' => 'required',
             'mail' => 'email',
@@ -35,6 +36,16 @@ class RegisterContoroller extends Controller
 
         if ($validator->fails()) {
             return redirect()->route('register')->withErrors($validator)->withInput();
+        }
+
+        /* 同じメールアドレスが登録されていないかチェック */
+        $db_item = DB::table('akuser')->where('mail', $request->mail)->first();
+
+        if( !is_null($db_item) )
+        {
+            $msg = '※そのメールアドレスはすでに登録されています';
+
+            return view('akchg.register',  ['msg' => $msg]);   
         }
 
         $param = [

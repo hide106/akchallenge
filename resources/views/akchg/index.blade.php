@@ -10,7 +10,7 @@
         </table>
         @isset($msg)
             <p>{{$msg}}</p>
-            @endisset
+        @endisset
 
         <div class="ly_lnk">
             <input type="submit" name="send" class = "btn" value="ログイン">

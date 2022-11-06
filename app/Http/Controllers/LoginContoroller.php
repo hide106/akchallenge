@@ -19,6 +19,13 @@ class LoginContoroller extends Controller
         $mail = $request->mail;
         $password = $request->password;
 
+        if (is_null($mail))
+        {
+            $msg = '※メールアドレスを入力してください。';
+
+            return view('akchg.index',  ['msg' => $msg]);            
+        }
+
         $db_item = DB::table('akuser')->where('mail', $mail)->first();
 
         if(Hash::check($password, $db_item->password))
