@@ -19,6 +19,9 @@
     <div class="ly_lnk">
         <a href="{{ route('register') }}" class="lnk">登録はこちらから</a>
     </div>
+    <div class="ly_lnk">
+        <a href="https://310artnetwork.sakura.ne.jp/akschool/" class="lnk">AK Schoolホームページ</a>
+    </div>
 @endsection
 @section('footer')
 copyright 2022 AK School.
