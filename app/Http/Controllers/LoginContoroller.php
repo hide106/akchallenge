@@ -23,15 +23,16 @@ class LoginContoroller extends Controller
         {
             $msg = '※メールアドレスを入力してください。';
 
-            return view('akchg.index',  ['msg' => $msg]);            
+            return view('akchg.index',  ['msg' => $msg]);
         }
 
-        $db_item = DB::table('akuser')->where('mail', $mail)->first();
+        $db_akuser = DB::table('akuser')->where('mail', $mail)->first();
+        $db_math = DB::table('math')->where('user_id', $db_akuser->id)->first();
 
-        if(Hash::check($password, $db_item->password))
+        if(Hash::check($password, $db_akuser->password))
         {
-            $id = $db_item->id;
-            $request->session()->put('id', $id);
+            $request->session()->put('id', $db_akuser->id);
+            $request->session()->put('math_table', $db_math);
 
             return redirect()->route('subject');
         } else {

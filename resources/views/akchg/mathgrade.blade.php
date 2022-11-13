@@ -9,7 +9,7 @@
     <a class="grade_button" href="{{ route('math3rd') }}">中学３年</a>
     <br>
     <div class="ly_buttun_other">
-        <a class="buttun_other" href="{{ route('mathgrade') }}">戻る</a>
+        <a class="buttun_other" href="{{ route('subject') }}">戻る</a>
         <a class="buttun_other" href="{{ route('logout') }}">ログアウト</a>
     </div>
 @endsection

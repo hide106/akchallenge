@@ -23,16 +23,19 @@ class SubjectController extends Controller
 
     public function showMath1stGradePage(Request $request)
     {
-        return view('akchg.math1st');
+        $math_table = $request->session()->get('math_table');
+        return view('akchg.math1st', ['math_table' => $math_table]);
     }
 
     public function showMath2ndGradePage(Request $request)
     {
-        return view('akchg.math2nd');
+        $math_table = $request->session()->get('math_table');
+        return view('akchg.math2nd', ['math_table' => $math_table]);
     }
 
     public function showMath3rdGradePage(Request $request)
     {
-        return view('akchg.math3rd');
+        $math_table = $request->session()->get('math_table');
+        return view('akchg.math3rd', ['math_table' => $math_table]);
     }
 }

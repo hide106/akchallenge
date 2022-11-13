@@ -15,6 +15,7 @@ class DelDBController extends Controller
     public function delDB(Request $request)
     {
         DB::table('akuser')->delete();
+        DB::table('math')->delete();
 
         return redirect()->route('login');
     }

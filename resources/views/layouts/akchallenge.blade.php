@@ -30,6 +30,7 @@
         .buttun_other{display: inline-block; border-style: solid; width:100px; height:30px; margin: 10px 10px; text-decoration: none; color: #999; text-align: center;  justify-content: center; align-items: center; font-size: 18px;}
         .ly_buttun_other{text-align: center;}
         .level_button{display: inline-block; border-style: solid; width:70px; height:40px; border-radius:50px; padding-top: 5px; margin: 0px auto; text-decoration: none; color: #999;  text-align: center; font-size: 25px; }
+        .clear_button{display: inline-block; border-style: solid; width:70px; height:40px; border-radius:50px; padding-top: 5px; margin: 0px auto; text-decoration: none; color: #999;  text-align: center; font-size: 23px; }
         .question_button{display: inline-block; width:50px; height:30px; margin: 10px 10px; text-decoration: none; color: #999; text-align: center;  justify-content: center; align-items: center; font-size: 18px;}
         .ly_question_button{text-align: center;}
         .score_button {margin-top: 30px;}
@@ -40,9 +41,12 @@
         .ans_form{ margin: 10px 20px; width: 150px; height: 30px; font-size: 20px;}
 
         /*教科・レベル選択用テーブル*/
-        .subject_table > table {width: 50%; margin: 50px auto; font-size: 25px; }
-        .subject_table > table > tbody > tr > td {height: 70px; width:15%}
+        .subject_table > table {width: 700px; margin: 50px auto; font-size: 25px; }
+        .subject_table > table > tbody > tr > td {height: 70px; width:17%}
         .subject_table > table > tbody > tr > td:first-child {width:45%}
+
+        /*結果表示用*/
+        .wrong_question{ text-align: center; margin: 30px auto; border: 2px solid; font-size: 20px;}
     </style>
 </head>
 <body>

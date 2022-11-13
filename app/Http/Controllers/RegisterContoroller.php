@@ -56,6 +56,32 @@ class RegisterContoroller extends Controller
 
         DB::table('akuser')->insert($param);
 
+        // 登録したデータのIDを取得
+        $db_item = DB::table('akuser')->where('mail', $request->mail)->first();
+        $user_id = $db_item->id;
+
+        $param = [
+            'user_id' => $user_id,
+            '1_1_1' => false,'1_1_2' => false,'1_1_3' => false,
+            '1_2_1' => false,'1_2_2' => false,'1_2_3' => false,
+            '1_3_1' => false,'1_3_2' => false,'1_3_3' => false,
+            '1_4_1' => false,'1_4_2' => false,'1_4_3' => false,
+            '1_5_1' => false,'1_5_2' => false,'1_5_3' => false,
+            '2_1_1' => false,'2_1_2' => false,'2_1_3' => false,
+            '2_2_1' => false,'2_2_2' => false,'2_2_3' => false,
+            '2_3_1' => false,'2_3_2' => false,'2_3_3' => false,
+            '2_4_1' => false,'2_4_2' => false,'2_4_3' => false,
+            '2_5_1' => false,'2_5_2' => false,'2_5_3' => false,
+            '3_1_1' => false,'3_1_2' => false,'3_1_3' => false,
+            '3_2_1' => false,'3_2_2' => false,'3_2_3' => false,
+            '3_3_1' => false,'3_3_2' => false,'3_3_3' => false,
+            '3_4_1' => false,'3_4_2' => false,'3_4_3' => false,
+            '3_5_1' => false,'3_5_2' => false,'3_5_3' => false,
+            '3_6_1' => false,'3_6_2' => false,'3_6_3' => false,
+        ];
+
+        DB::table('math')->insert($param);
+
         return redirect()->route('login');
     }
 }
