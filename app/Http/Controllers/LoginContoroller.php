@@ -27,10 +27,10 @@ class LoginContoroller extends Controller
         }
 
         $db_akuser = DB::table('akuser')->where('mail', $mail)->first();
-        $db_math = DB::table('math')->where('user_id', $db_akuser->id)->first();
 
-        if(Hash::check($password, $db_akuser->password))
+        if( !is_null( $db_akuser ) && Hash::check($password, $db_akuser->password))
         {
+            $db_math = DB::table('math')->where('user_id', $db_akuser->id)->first();
             $request->session()->put('id', $db_akuser->id);
             $request->session()->put('math_table', $db_math);
 
